@@ -7,7 +7,7 @@ export class MainController {
     this.creationDate = 1501898718476;
     this.toastr = toastr;
     this.$state = $state;
-    this.current_user = sessionStorage.getItem('user') || {}
+    this.current_user = sessionStorage.getItem('current_user')
     this.getProducts(webDevTec);
   }
 
