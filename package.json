@@ -1,7 +1,9 @@
 {
   "name": "marketplaceSpa",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular-popeye": "^1.0.5"
+  },
   "scripts": {
     "test": "gulp test",
     "serve": "gulp serve"

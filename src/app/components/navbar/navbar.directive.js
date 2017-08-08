@@ -19,7 +19,7 @@ class NavbarController {
   constructor (moment, $state, webDevTec, toastr) {
     'ngInject';
     this.$state = $state;
-    this.current_user = sessionStorage.getItem('current_user')
+    this.current_user = sessionStorage.getItem('current_user');
     this.webDevTec = webDevTec;
     this.toastr = toastr;
     this.user = {
@@ -28,7 +28,7 @@ class NavbarController {
       email: "user@email.com",
       password: "",
       password_confirmation: ""
-    }
+    };
   }
   logout() {
     var self = this;
@@ -49,7 +49,7 @@ class NavbarController {
         self.reload();
         self.toastr.success('Logged in successfully. Welcome,');
       }).error(function(){
-        self.toastr.error('Unable to login. Please verify your credentials.')
+        self.toastr.error('Unable to login. Please verify your credentials.');
       });
     }
   }
