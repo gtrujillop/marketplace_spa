@@ -2,7 +2,7 @@ export class WebDevTecService {
   constructor ($http) {
     'ngInject';
     this.$http = $http;
-    this.urlBase = 'http://localhost:3000/v1';
+    this.urlBase = 'https://marketplace-api-getp.herokuapp.com/v1/';
   }
 
   getProducts() {
