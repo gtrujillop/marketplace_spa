@@ -11,6 +11,7 @@ export class MainController {
     this.$rootScope = $rootScope;
     this.current_user = angular.fromJson(sessionStorage.getItem('current_user'));
     this.getProducts(webDevTec);
+    this.showJumbotron = true;
   }
 
   getProducts(webDevTec) {
@@ -26,6 +27,9 @@ export class MainController {
     this.$state.go('signup');
   }
 
+  hideJumbotron() {
+    this.showJumbotron = !this.showJumbotron;
+  }
 
   openProductProfile(product) {
     var self = this;

@@ -16,7 +16,7 @@ export function NavbarDirective() {
 }
 
 class NavbarController {
-  constructor (moment, $state, webDevTec, toastr) {
+  constructor (moment, $state, webDevTec, toastr, $scope) {
     'ngInject';
     this.$state = $state;
     this.current_user = sessionStorage.getItem('current_user');
@@ -29,7 +29,16 @@ class NavbarController {
       password: "",
       password_confirmation: ""
     };
+    this.$scope = $scope;
+    this.$scope.cart = angular.fromJson(sessionStorage.getItem('temp_cart')) || [];
+    this.$scope.$watch(() => sessionStorage.temp_cart, function(nv, ov) {
+      if (nv !== ov) {
+        console.log('Cart has changed');
+        $scope.cart = angular.fromJson(sessionStorage.getItem('temp_cart'));
+      }
+    });
   }
+
   logout() {
     var self = this;
     self.webDevTec.logout().success(function(){

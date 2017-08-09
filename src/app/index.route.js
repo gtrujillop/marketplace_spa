@@ -13,5 +13,5 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       controller: 'SignupController',
       controllerAs: 'signup'
     })
-  $urlRouterProvider.otherwise('home');
+  $urlRouterProvider.otherwise('/');
 }

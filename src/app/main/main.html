@@ -4,8 +4,9 @@
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
   </div>
 
-  <div class="jumbotron text-center">
+  <div ng-show="main.showJumbotron" class="jumbotron text-center">
     <h1>Marketplace Site</h1>
+    <h8 class="link" ng-click="main.hideJumbotron()">Hide this</h8>
     <p class="lead">
       <img src="assets/images/marketplace_main.png" alt="I'm Yeoman"><br>
     </p>
