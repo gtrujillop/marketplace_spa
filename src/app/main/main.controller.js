@@ -9,7 +9,7 @@ export class MainController {
     this.$state = $state;
     this.Popeye = Popeye;
     this.$rootScope = $rootScope;
-    this.current_user = JSON.parse(sessionStorage.getItem('current_user'));
+    this.current_user = angular.fromJson(sessionStorage.getItem('current_user'));
     this.getProducts(webDevTec);
   }
 

@@ -5,8 +5,8 @@ export class ProductController {
     this.Popeye = Popeye;
     this.modal = modal;
     this.product = $rootScope.product;
-    this.current_user = JSON.parse(sessionStorage.getItem('current_user'));
-    this.tempCart = JSON.parse(sessionStorage.getItem('temp_cart'));
+    this.current_user = angular.fromJson(sessionStorage.getItem('current_user'));
+    this.tempCart = angular.fromJson(sessionStorage.getItem('temp_cart'));
   }
 
   addToCart(product) {
