@@ -33,7 +33,6 @@ class NavbarController {
     this.$scope.cart = angular.fromJson(sessionStorage.getItem('temp_cart')) || [];
     this.$scope.$watch(() => sessionStorage.temp_cart, function(nv, ov) {
       if (nv !== ov) {
-        console.log('Cart has changed');
         $scope.cart = angular.fromJson(sessionStorage.getItem('temp_cart'));
       }
     });
