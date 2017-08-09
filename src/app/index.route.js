@@ -12,7 +12,6 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/signup/signup.html',
       controller: 'SignupController',
       controllerAs: 'signup'
-    });
-
-  $urlRouterProvider.otherwise('/');
+    })
+  $urlRouterProvider.otherwise('home');
 }
