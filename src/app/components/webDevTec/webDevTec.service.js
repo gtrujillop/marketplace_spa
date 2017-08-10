@@ -6,23 +6,23 @@ export class WebDevTecService {
   }
 
   getProducts() {
-    return this.$http.get(this.urlBase + '/products');
+    return this.$http.get(this.urlBase + 'products');
   }
 
   signup(user) {
-    return this.$http.post(this.urlBase + '/users', { user: user });
+    return this.$http.post(this.urlBase + 'users', { user: user });
   }
 
   login(user) {
-    return this.$http.post(this.urlBase + '/users/sign_in?email=' + user.email + '&password=' + user.password);
+    return this.$http.post(this.urlBase + 'users/sign_in?email=' + user.email + '&password=' + user.password);
 
   }
 
   logout() {
-    return this.$http.delete(this.urlBase + '/users/sign_out');
+    return this.$http.delete(this.urlBase + 'users/sign_out');
   }
 
-  saveCart() {
-
+  saveCart(cart) {
+    return this.$http.post(this.urlBase + 'carts', { cart: cart });
   }
 }

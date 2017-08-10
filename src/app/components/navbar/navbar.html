@@ -15,7 +15,7 @@
 
       <ul class="nav navbar-nav navbar-right acme-navbar-text">
         <li ng-if="vm.current_user != undefined">
-          <a href="#" class="btn btn-info btn-lg">
+          <a ng-click="vm.cartDetails()" class="btn btn-info btn-lg">
             <span class="glyphicon glyphicon-shopping-cart"></span> Items: {{cart.length}}
           </a>
         </li>

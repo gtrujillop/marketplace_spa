@@ -16,7 +16,7 @@ export function NavbarDirective() {
 }
 
 class NavbarController {
-  constructor (moment, $state, webDevTec, toastr, $scope) {
+  constructor (moment, $state, webDevTec, toastr, Popeye, $scope) {
     'ngInject';
     this.$state = $state;
     this.current_user = sessionStorage.getItem('current_user');
@@ -29,6 +29,7 @@ class NavbarController {
       password: "",
       password_confirmation: ""
     };
+    this.Popeye = Popeye;
     this.$scope = $scope;
     this.$scope.cart = angular.fromJson(sessionStorage.getItem('temp_cart')) || [];
     this.$scope.$watch(() => sessionStorage.temp_cart, function(nv, ov) {
@@ -64,5 +65,20 @@ class NavbarController {
 
   reload() {
     this.$state.reload();
+  }
+
+  cartDetails() {
+    var self = this;
+    // Open a modal to show the selected user profile
+    var modal = self.Popeye.openModal({
+      controller: "CartController as cart",
+      templateUrl: "app/cart/showCart.html"
+    });
+
+    // Show a spinner while modal is resolving dependencies
+    self.showLoading = true;
+    modal.resolved.then(function() {
+      self.showLoading = false;
+    });
   }
 }

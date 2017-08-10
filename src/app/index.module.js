@@ -5,6 +5,7 @@ import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { ProductController } from './product/product.controller';
+import { CartController } from './cart/cart.controller';
 import { SignupController } from './signup/signup.controller';
 import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
@@ -24,5 +25,6 @@ angular.module('marketplaceSpa', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSaniti
   .controller('MainController', MainController)
   .controller('SignupController', SignupController)
   .controller('ProductController', ProductController)
+  .controller('CartController', CartController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeMalarkey', MalarkeyDirective);
