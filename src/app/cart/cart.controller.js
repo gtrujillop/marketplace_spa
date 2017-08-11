@@ -5,6 +5,7 @@ export class CartController {
     this.Popeye = Popeye;
     this.modal = modal;
     this.tempCart = angular.fromJson(sessionStorage.getItem('temp_cart'));
+    this.current_user = angular.fromJson(sessionStorage.getItem('current_user'));
     this.webDevTec = webDevTec;
   }
 
@@ -29,7 +30,7 @@ export class CartController {
   purchase() {
     if (confirm("Do you want to purchase this product(s)")) {
       var self = this;
-      self.webDevTec.saveCart(this.tempCart).success(function(){
+      self.webDevTec.saveCart(self.current_user, self.tempCart).success(function(){
         self.toastr.success('Products were purchased successfully.');
       }).error(function(){
         self.toastr.error('Unable to purchase products.');
