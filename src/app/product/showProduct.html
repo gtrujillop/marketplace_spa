@@ -1,0 +1,16 @@
+<div class="modal-header">
+ <h3 class="modal-title">{{prod.product.name}}</h3>
+</div>
+<div class="modal-body">
+  <p>Brand: {{ prod.product.brand }}</p>
+  <p>Sku: {{ prod.product.sku }}</p>
+  <p class="prod-desc">Description: {{ prod.product.desc }}</p>
+  <p>
+    Price: <span id="currency-default">{{(prod.product.price_cents / 100) | currency}}</span>
+  </p>
+  <button ng-if="prod.current_user != undefined" class="btn btn-primary" type="button" ng-click="prod.addToCart(prod.product)">Add To Cart</button>
+  <p ng-if="prod.current_user == undefined">Login to add products to cart.</p>
+</div>
+<div class="modal-footer">
+ <button class="btn btn-primary" type="button" ng-click="cancel()">Close</button>
+</div>

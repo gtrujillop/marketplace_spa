@@ -20,11 +20,22 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 }
 
 .thumbnail {
-  height: 200px;
+  height: 250px;
 
   img.pull-right {
     width: 50px;
   }
+
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.link {
+  cursor: pointer;
+  color: blue;
 }
 
 /**

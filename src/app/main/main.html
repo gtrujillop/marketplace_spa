@@ -4,8 +4,9 @@
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
   </div>
 
-  <div class="jumbotron text-center">
+  <div ng-show="main.showJumbotron" class="jumbotron text-center">
     <h1>Marketplace Site</h1>
+    <h8 class="link" ng-click="main.hideJumbotron()">Hide this</h8>
     <p class="lead">
       <img src="assets/images/marketplace_main.png" alt="I'm Yeoman"><br>
     </p>
@@ -26,7 +27,13 @@
       <div class="thumbnail">
         <div class="caption">
           <h3>{{ product.name }}</h3>
-          <p>{{ product.description }}</p>
+          <p>Brand: {{ product.brand }}</p>
+          <p>Sku: {{ product.sku }}</p>
+          <p class="prod-desc">Description: {{ product.desc }}</p>
+          <p>
+            Price: <span id="currency-default">{{(product.price_cents / 100) | currency}}</span>
+          </p>
+          <a class="link" ng-click="main.openProductProfile(product)">More</a>
         </div>
       </div>
     </div>

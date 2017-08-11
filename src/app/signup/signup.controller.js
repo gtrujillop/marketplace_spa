@@ -2,7 +2,7 @@ export class SignupController {
   constructor ($timeout, webDevTec, toastr, $state) {
     'ngInject';
     this.toastr = toastr;
-    this.webDevTec = webDevTec
+    this.webDevTec = webDevTec;
     this.$state = $state;
     this.user = {
       first_name: "First name",
@@ -10,7 +10,7 @@ export class SignupController {
       email: "user@email.com",
       password: "",
       password_confirmation: ""
-    }
+    };
   }
 
   signup(validForm) {
@@ -23,7 +23,7 @@ export class SignupController {
         self.user = null;
         self.$state.go('home');
       }).error(function(){
-        self.toastr.error('Could not create user')
+        self.toastr.error('Could not create user');
       });
     }
   }
