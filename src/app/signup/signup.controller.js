@@ -17,7 +17,7 @@ export class SignupController {
     if (validForm) {
       var self = this;
       self.webDevTec.signup(self.user).success(function(data){
-        self.user = data.user;
+        self.user = data;
         sessionStorage.setItem('current_user', angular.toJson(self.user));
         self.toastr.success('User was created.');
         self.user = null;
